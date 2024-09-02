@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "12703317",
+      "name": "单词本",
+      "font_class": "word",
+      "unicode": "e6f6",
+      "unicode_decimal": 59126
+    },
+    {
       "icon_id": "26503289",
       "name": "喇叭",
       "font_class": "message",

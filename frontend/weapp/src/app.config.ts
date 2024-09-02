@@ -13,6 +13,7 @@ export default defineAppConfig({
         "changeLog/index", // 更新日志
         "map/index", // 地图
         "notice/index", // 服务通知
+        "word/index", // 单词本
       ],
     },
     {
@@ -20,7 +21,7 @@ export default defineAppConfig({
       pages: [
         "index", // echarts 图表
       ],
-    }
+    },
   ],
   tabBar: {
     list: [

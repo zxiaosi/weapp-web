@@ -16,3 +16,14 @@ export interface UpdateUserApi {
   password?: string;
   avatar?: string;
 }
+
+/**
+ * 单词
+ */
+export interface WordApi {
+  id?: number;
+  word?: string;
+  translation1?: string;
+  translation2?: string;
+  favorites?: number;
+}

@@ -12,25 +12,25 @@ import { AtIcon } from "taro-ui";
 definePageConfig({});
 
 const catalog = [
-  { id: 1, name: "公告通知", icon: "announcement", url: "/views/announcement/index" },
+  { id: 1, name: "公告通知", icon: "notice", url: "/views/announcement/index" },
   { id: 2, name: "关于项目", icon: "about", url: "/views/collection/index" },
 ];
 
 // 仅支持在正式版小程序中获取
-const currentVersion = Taro.getAccountInfoSync().miniProgram.version || '1.0.0';
+const currentVersion = Taro.getAccountInfoSync().miniProgram.version || "1.0.0";
 
 const Index = () => {
   const [user, setUser] = useState({
     username: "未知",
     avatar: "",
-    roleName: "未知"
+    roleName: "未知",
   });
 
   // 版本号和身份
   const plateList = [
     { id: 1, name: `V${currentVersion}`, desc: "当前版本" },
     { id: 2, name: user.roleName, desc: "用户身份" },
-  ]
+  ];
 
   useDidShow(() => {
     const userInfo = getLocalSync(UserInfoStore);
@@ -42,16 +42,16 @@ const Index = () => {
    */
   const handleClick = (item) => {
     Taro.showToast({ title: "功能正在开发中...", icon: "none" });
-    Taro.openDocument
+    Taro.openDocument;
   };
 
   /**
    * 退出登录
    */
   const handleLogout = () => {
-    removeLocalSync(UserInfoStore)
+    removeLocalSync(UserInfoStore);
     Taro.switchTab({ url: LoginUrl });
-    setUser({ username: "未知", avatar: "", roleName: "未知" })
+    setUser({ username: "未知", avatar: "", roleName: "未知" });
   };
 
   return (
@@ -61,27 +61,27 @@ const Index = () => {
       isUseBgColor={true} // 是否使用背景(主题)色
     >
       <View className={styles.page}>
-
         <View className={styles.header}>
           {/* 头像 */}
-          <Image src={user.avatar ? (ImageUrl + user.avatar) : defaultImg} className={styles.avatar} />
+          <Image
+            src={user.avatar ? ImageUrl + user.avatar : defaultImg}
+            className={styles.avatar}
+          />
 
           {/* 用户名 */}
           <View className={styles.name}>{user.username}</View>
 
           {/* 版本号和身份 */}
           <View className={styles.plateList}>
-            {
-              plateList.map((plate) => (
-                <>
-                  <View key={plate.id} className={styles.plate} >
-                    <View className={styles.top}>{plate.name}</View>
-                    <View className={styles.bottom}>{plate.desc}</View>
-                  </View>
-                  {plate.id === 1 && <View className={styles.line} />}
-                </>
-              ))
-            }
+            {plateList.map((plate) => (
+              <>
+                <View key={plate.id} className={styles.plate}>
+                  <View className={styles.top}>{plate.name}</View>
+                  <View className={styles.bottom}>{plate.desc}</View>
+                </View>
+                {plate.id === 1 && <View className={styles.line} />}
+              </>
+            ))}
           </View>
         </View>
 
@@ -93,7 +93,11 @@ const Index = () => {
               className={styles.menu}
               onClick={() => handleClick(menu)}
             >
-              <AtIcon prefixClass='iconfont' value={menu.icon} className={styles.icon} />
+              <AtIcon
+                prefixClass="iconfont"
+                value={menu.icon}
+                className={styles.icon}
+              />
               <View className={styles.name}>{menu.name}</View>
             </View>
           ))}
@@ -106,6 +110,6 @@ const Index = () => {
       </View>
     </MyLayout>
   );
-}
+};
 
 export default Index;

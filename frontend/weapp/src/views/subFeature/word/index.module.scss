@@ -1,0 +1,81 @@
+$bgColor: linear-gradient(90deg, #74dace, #4da1fc);
+
+.page {
+  :global {
+    .at-tabs__item {
+      font-size: 18Px;
+      text-align: center;
+      padding: 10px 15%;
+    }
+  }
+
+  .top {
+    width: 100vw;
+    margin-bottom: 100px;
+
+    .word {
+      height: 20vh;
+      line-height: 20vh;
+      text-align: center;
+      font-size: 24Px;
+      color: #4da1fc;
+    }
+
+    .translation {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 10vh;
+      width: 75vw;
+      background-color: #ccc;
+      margin: 0 auto;
+      border-radius: 16px;
+    }
+  }
+
+  .btn {
+    color: #fff !important;
+    border: 0;
+    margin: 40rpx 100rpx;
+    background: $bgColor;
+  }
+
+  .scroll {
+    height: calc(100vh - 87px - 34px - 114px);
+    overflow-y: auto;
+
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ccc;
+      height: 70px;
+      padding: 24px;
+
+
+      .left {
+
+        .word {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          color: inherit;
+          font-size: inherit;
+          line-height: 1.5;
+        }
+
+        .translation {
+          color: #999;
+          font-size: 28rpx;
+          line-height: 1.5;
+        }
+      }
+
+
+    }
+
+    .right {}
+  }
+}
