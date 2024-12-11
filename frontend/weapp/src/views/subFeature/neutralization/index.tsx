@@ -8,8 +8,9 @@ import { WordApi } from "@/apis/model";
 import { AtDivider, AtIcon, AtMessage, AtTabs, AtTabsPane } from "taro-ui";
 
 /** 题库类型 */
-const wordType = 0;
+const wordType = 2;
 
+/** 中化大题 */
 const Index = () => {
   const router = useRouter();
 
@@ -126,7 +127,7 @@ const Index = () => {
               )}
             </View>
 
-            <Button
+            {/* <Button
               plain
               type="primary"
               className={styles.btn}
@@ -134,7 +135,7 @@ const Index = () => {
               onClick={handleShowTranslation}
             >
               查看释义
-            </Button>
+            </Button> */}
 
             {currentWord.favorites === 0 ? (
               <Button

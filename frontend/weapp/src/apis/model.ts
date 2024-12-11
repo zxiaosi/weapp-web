@@ -22,8 +22,8 @@ export interface UpdateUserApi {
  */
 export interface WordApi {
   id?: number;
-  word?: string;
-  translation1?: string;
-  translation2?: string;
+  title?: string;
+  translation?: string;
   favorites?: number;
+  type?: number;
 }

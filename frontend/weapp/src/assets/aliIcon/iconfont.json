@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "42745991",
+      "name": "药理大题",
+      "font_class": "pharmacological",
+      "unicode": "ec33",
+      "unicode_decimal": 60467
+    },
+    {
+      "icon_id": "42745992",
+      "name": "中化大题",
+      "font_class": "neutralization",
+      "unicode": "ec34",
+      "unicode_decimal": 60468
+    },
+    {
       "icon_id": "12703317",
       "name": "单词本",
       "font_class": "word",

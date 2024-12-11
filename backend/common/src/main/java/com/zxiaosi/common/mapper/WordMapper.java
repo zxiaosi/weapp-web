@@ -11,37 +11,29 @@ import java.util.List;
 public interface WordMapper {
 
     /**
-     * 获取单词列表
+     * 获取对应的题库根据类型
+     *
+     * @param type 类型
      */
-    List<Word> getWordList();
+    List<Word> getWordListByType(Integer type);
 
     /**
-     * 获取单词详情
+     * 获取题库详情根据Id与类型
+     *
+     * @param id   id
+     * @param type 类型
      */
-    Word getWordDetail(Integer id);
+    Word getWordByIdAndType(Integer id, Integer type);
 
     /**
-     * 添加单词
-     */
-    void addWord(Word word);
-
-    /**
-     * 更新单词
+     * 更新题库
+     *
+     * @param word 单词
      */
     void updateWord(Word word);
 
     /**
-     * 收藏单词
+     * 获取收藏单词列表根据类型
      */
-    void favoritesWord(Integer id);
-
-    /**
-     * 取消收藏单词
-     */
-    void cancelFavoritesWord(Integer id);
-
-    /**
-     * 获取收藏单词列表
-     */
-    List<Word> getFavoritesWordList();
+    List<Word> getFavoritesWordListByType(Integer type);
 }

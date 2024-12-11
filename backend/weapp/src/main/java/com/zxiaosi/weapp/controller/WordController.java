@@ -22,37 +22,24 @@ public class WordController {
     private WordService wordService;
 
     @GetMapping("/list")
-    public Result<?> list() {
-        return Result.success(wordService.getWordListService());
+    public Result<?> list(@RequestParam Integer type) {
+        return Result.success(wordService.getWordListByTypeService(type));
     }
 
-    @PostMapping("/add")
-    public Result<?> add(@RequestBody Word word) {
-        wordService.addWordService(word);
-        return Result.success();
+    @GetMapping("/detail")
+    public Result<?> detail(@RequestParam Integer id, @RequestParam Integer type) {
+        return Result.success(wordService.getWordByIdAndTypeService(id, type));
     }
 
     @PostMapping("/update")
     public Result<?> update(@RequestBody Word word) {
         wordService.updateWordService(word);
-        return Result.success();
-    }
-
-    @PostMapping("/favorites")
-    public Result<?> favorites(@RequestBody Word word) {
-        wordService.favoritesWordService(word.getId());
-        return Result.success(wordService.getWordService(word.getId()));
-    }
-
-    @PostMapping("/cancelFavorites")
-    public Result<?> cancelFavorites(@RequestBody Word word) {
-        wordService.cancelFavoritesWordService(word.getId());
-        return Result.success(wordService.getWordService(word.getId()));
+        return Result.success(wordService.getWordByIdAndTypeService(word.getId(), word.getType()));
     }
 
     @GetMapping("/favoritesList")
-    public Result<?> favoritesList() {
-        return Result.success(wordService.getFavoritesWordListService());
+    public Result<?> favoritesList(@RequestParam Integer type) {
+        return Result.success(wordService.getFavoritesWordListByTypeService(type));
     }
 
 }

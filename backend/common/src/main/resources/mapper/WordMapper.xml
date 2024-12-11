@@ -7,53 +7,36 @@
     <!-- parameterType: 参数类型 -->
     <!-- 实体类字段和数据库一致直接用resultType -->
 
-    <!--  获取单词列表  -->
-    <select id="getWordList" resultType="com.zxiaosi.common.entity.Word">
+    <!--  根据类型获取对应的题库  -->
+    <select id="getWordListByType" resultType="com.zxiaosi.common.entity.Word">
         select *
         from word
+        where favorites = 0
+          and type = #{type}
     </select>
 
-    <!--  获取单词详情  -->
-    <select id="getWordDetail" resultType="com.zxiaosi.common.entity.Word">
+    <!--  获取题库详情根据Id与类型  -->
+    <select id="getWordByIdAndType" resultType="com.zxiaosi.common.entity.Word">
         select *
         from word
         where id = #{id}
+          and type = #{type}
     </select>
 
-    <!--  添加单词  -->
-    <insert id="addWord" parameterType="com.zxiaosi.common.entity.Word">
-        insert into word (word, translation1, translation2)
-        values (#{word}, #{translation1}, #{translation2})
-    </insert>
-
-    <!--  更新单词  -->
-    <update id="updateWord" parameterType="com.zxiaosi.common.entity.Word">
+    <!--  更新题库  -->
+    <update id="updateWord">
         update word
-        set word         = #{word},
-            translation1 = #{translation1},
-            translation2 = #{translation2}
-        where id = #{id}
-    </update>
-
-    <!--  收藏单词  -->
-    <update id="favoritesWord" parameterType="com.zxiaosi.common.entity.Word">
-        update word
-        set favorites = 1
-        where id = #{id}
-    </update>
-
-    <!--  取消收藏单词  -->
-    <update id="cancelFavoritesWord" parameterType="com.zxiaosi.common.entity.Word">
-        update word
-        set favorites = 0
+        set favorites   = #{favorites},
+            translation = #{translation}
         where id = #{id}
     </update>
 
     <!--  获取收藏单词列表  -->
-    <select id="getFavoritesWordList" resultType="com.zxiaosi.common.entity.Word">
+    <select id="getFavoritesWordListByType" resultType="com.zxiaosi.common.entity.Word">
         select *
         from word
         where favorites = 1
+          and type = #{type}
     </select>
 
 </mapper>

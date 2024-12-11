@@ -14,6 +14,8 @@ export default defineAppConfig({
         "map/index", // 地图
         "notice/index", // 服务通知
         "word/index", // 单词本
+        "neutralization/index", // 中化大题
+        "pharmacological/index", // 药理大题
       ],
     },
     {

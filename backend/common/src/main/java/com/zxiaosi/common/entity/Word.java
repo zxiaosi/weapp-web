@@ -5,7 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * 单词实体类
+ * 题库实体类
  *
  * @author zxiaosi
  * @date 2024/8/22 下午11:22
@@ -14,27 +14,30 @@ import java.io.Serializable;
 public class Word implements Serializable {
 
     /**
-     * 用户id
+     * id
      */
     private Integer id;
 
     /**
-     * 单词
+     * 标题
      */
-    private String word;
+    private String title;
 
     /**
-     * 翻译1
+     * 翻译
      */
-    private String translation1;
-
-    /**
-     * 翻译2
-     */
-    private String translation2;
+    private String translation;
 
     /**
      * 收藏
      */
     private Integer favorites;
+
+    /**
+     * 类型
+     * - 1: 题库本
+     * - 2: 药理大题
+     * - 3: 中化大题
+     */
+    private Integer type;
 }

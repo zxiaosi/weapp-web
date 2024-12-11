@@ -6,6 +6,7 @@ import com.zxiaosi.weapp.service.WordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -21,18 +22,13 @@ public class WordServiceImpl implements WordService {
     private WordMapper wordMapper;
 
     @Override
-    public List<Word> getWordListService() {
-        return wordMapper.getWordList();
+    public List<Word> getWordListByTypeService(Integer type) {
+        return wordMapper.getWordListByType(type);
     }
 
     @Override
-    public Word getWordService(Integer id) {
-        return wordMapper.getWordDetail(id);
-    }
-
-    @Override
-    public void addWordService(Word word) {
-        wordMapper.addWord(word);
+    public Word getWordByIdAndTypeService(Integer id, Integer type) {
+        return wordMapper.getWordByIdAndType(id, type);
     }
 
     @Override
@@ -41,17 +37,7 @@ public class WordServiceImpl implements WordService {
     }
 
     @Override
-    public void favoritesWordService(Integer id) {
-        wordMapper.favoritesWord(id);
-    }
-
-    @Override
-    public void cancelFavoritesWordService(Integer id) {
-        wordMapper.cancelFavoritesWord(id);
-    }
-
-    @Override
-    public List<Word> getFavoritesWordListService() {
-        return wordMapper.getFavoritesWordList();
+    public List<Word> getFavoritesWordListByTypeService(Integer type) {
+        return wordMapper.getFavoritesWordListByType(type);
     }
 }

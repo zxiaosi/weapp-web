@@ -5,7 +5,7 @@ import com.zxiaosi.common.entity.Word;
 import java.util.List;
 
 /**
- * 单词服务
+ * 题库服务
  *
  * @author zxiaosi
  * @date 2024/8/22 下午11:31
@@ -13,52 +13,29 @@ import java.util.List;
 public interface WordService {
 
     /**
-     * 获取单词列表
+     * 获取对应的题库根据类型
      *
-     * @return List<Word>
+     * @param type 类型
      */
-    List<Word> getWordListService();
+    List<Word> getWordListByTypeService(Integer type);
 
     /**
-     * 获取单词
+     * 获取题库详情根据Id与类型
      *
-     * @param id 单词id
-     * @return Word
+     * @param id   id
+     * @param type 类型
      */
-    Word getWordService(Integer id);
+    Word getWordByIdAndTypeService(Integer id, Integer type);
 
     /**
-     * 添加单词
-     *
-     * @param word 单词
-     */
-    void addWordService(Word word);
-
-    /**
-     * 更新单词
+     * 更新题库
      *
      * @param word 单词
      */
     void updateWordService(Word word);
 
     /**
-     * 收藏单词
-     *
-     * @param id 单词id
+     * 获取收藏单词列表根据类型
      */
-    void favoritesWordService(Integer id);
-
-    /**
-     * 取消收藏单词
-     *
-     * @param id 单词id
-     */
-    void cancelFavoritesWordService(Integer id);
-
-    /**
-     * 获取收藏单词列表
-     *
-     * @return List<Word>
-     */
-    List<Word> getFavoritesWordListService();
+    List<Word> getFavoritesWordListByTypeService(Integer type);
 }

@@ -35,6 +35,18 @@ const catalogList = [
     url: "/views/subFeature/notice/index",
   },
   { id: 5, name: "单词本", icon: "word", url: "/views/subFeature/word/index" },
+  {
+    id: 6,
+    name: "中化大题",
+    icon: "neutralization",
+    url: "/views/subFeature/neutralization/index",
+  },
+  {
+    id: 7,
+    name: "药理大题",
+    icon: "pharmacological",
+    url: "/views/subFeature/pharmacological/index",
+  },
 ];
 
 const Index = () => {

@@ -1,8 +1,8 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4269283 */
-  src: url('iconfont.woff2?t=1725288248073') format('woff2'),
-       url('iconfont.woff?t=1725288248073') format('woff'),
-       url('iconfont.ttf?t=1725288248073') format('truetype');
+  src: url('iconfont.woff2?t=1733754809958') format('woff2'),
+       url('iconfont.woff?t=1733754809958') format('woff'),
+       url('iconfont.ttf?t=1733754809958') format('truetype');
 }
 
 .iconfont {
@@ -11,6 +11,14 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.iconfont-pharmacological:before {
+  content: "\ec33";
+}
+
+.iconfont-neutralization:before {
+  content: "\ec34";
 }
 
 .iconfont-word:before {

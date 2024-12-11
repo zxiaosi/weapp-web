@@ -17,21 +17,17 @@ export const sendBizApi = (issue: string) =>
   post(`/sendBiz?issue=${encodeURIComponent(issue)}`);
 
 /** 获取单词列表 */
-export const getWordListApi = () => get("/word/list", {});
-
-/** 添加单词 */
-export const addWordApi = (word: WordApi) => post("/word/add", { ...word });
+export const getWordListApi = (type: number) =>
+  get(`/word/list?type=${type}`, {});
 
 /** 更新单词 */
 export const updateWordApi = (word: WordApi) =>
   post("/word/update", { ...word });
 
-/** 收藏单词 */
-export const favoriteWordApi = (id: number) => post("/word/favorites", { id });
-
-/** 取消收藏单词 */
-export const cancelFavoriteWordApi = (id: number) =>
-  post("/word/cancelFavorites", { id });
+/** 获取题库详情 */
+export const getWordDetailApi = (id: number, type: number) =>
+  get(`/word/detail?id=${id}&type=${type}`);
 
 /** 获取收藏列表 */
-export const getFavoriteListApi = () => get("/word/favoritesList", {});
+export const getFavoriteListApi = (type: number) =>
+  get(`/word/favoritesList?type=${type}`, {});
